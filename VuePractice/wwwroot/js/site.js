@@ -6,9 +6,10 @@
 new Vue({
     el: '#app',
     data: {
+        twoWay:"two Way Binding",
         title: 'Hello World!',
         link: 'http://google.com',
-        link2: '<a href="link">HtmlRawGibi</a> ',
+        link2: '<a href="link">HtmlRaw()Gibi</a> ',
         counter: 0,
         x: 0,
         y: 0
@@ -25,7 +26,7 @@ new Vue({
             this.counter++;
         },
         updateCoord: function (step, event) {
-            //event yaninda kendi parametrenidfe pass edebilirsin
+            //event yaninda kendi parametrenide pass edebilirsin
             this.x = event.clientX; //clientX js ozelligi
             this.y = event.clientY;
             this.counter += step;

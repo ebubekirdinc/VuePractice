@@ -1,25 +1,36 @@
 ﻿
-
 <style>
     span {
         color: green
     }
 </style>
 
-
 <div id="app">
+    <br />
+
+
+    <input type="text" v-model="twoWay">
+    <p> {{ twoWay }} </p>
+    <h3> {{ twoWay }} </h3>
+
+    <hr />
     <h4 v-once>{{ title }} <span>v-once ile ilk data'daki halini alir, sonradan methodlarda yapilan degisiklikler dikkate alinmaz</span></h4>
 
+    <hr />
     <input type="text" v-on:input="changeTitle">
     <p>{{ title }}</p>
+
+    <hr />
     <p>{{ sayHello() }} - <a v-bind:href="link">Google</a> <span>{{}} seklinde yapilsa string interpolation oldugu icin metin olarak basar. Onun icin attributelar icin v-bind</span></p>
 
-    <p v-html="link2"> </p>
+    <hr />
+    <p v-html="link2"> <span> Html olarak basma</span></p>
 
+    <hr />
     <button v-on:click="artir">Artir</button>
     <p>{{counter}} click burda dom eventi vue ile ilgili degil</p>
-    <p v-on:mousemove="updateCoord(2,$event)">
+    <p v-on:mousemove="updateCoord(100,$event)">
         Coordinates: {{x}}/{{y}}
-
+        <span v-on:mousemove.stop> Burada v-on calismaz</span>
     </p>
 </div>
