@@ -44,5 +44,14 @@ new Vue({
             console.log("Computed Calisti...");
             return this.counterC > 10 ? "10'dan büyüktür" : "10'dan kücüktür.";
         }
+    },
+    watch: { //computed senkron watch asenkron calisir
+        counterC: function (value) { //data daki verileri gozlemler, veri degisince devreye girer.
+            console.log(value);
+            vm = this; //setTimeout bir js fonksiyonu old. icin ve onun icinden vue'ya erisebilmek icin.
+            setTimeout(function () {
+                vm.counterC = 0;
+            }, 1500);//1 bucuk saniye sonra degerini sifirlar.
+        }
     }
 });
