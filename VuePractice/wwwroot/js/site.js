@@ -6,7 +6,10 @@
 new Vue({
     el: '#app',
     data: {
-        twoWay:"two Way Binding",
+        counterC: 0,
+        secondCounter: 0,
+
+        twoWay: "two Way Binding",
         title: 'Hello World!',
         link: 'http://google.com',
         link2: '<a href="link">HtmlRaw()Gibi</a> ',
@@ -15,6 +18,10 @@ new Vue({
         y: 0
     },
     methods: {
+        result: function () {
+            console.log("Method Calisti...");
+            return this.counterC > 10 ? "10'dan büyüktür" : "10'dan kücüktür.";
+        },
         changeTitle: function (e) {
             this.title = e.target.value; //vue icindeki elemanlara ersimek this ile
         },
@@ -31,5 +38,11 @@ new Vue({
             this.y = event.clientY;
             this.counter += step;
         }
+    },
+    computed: { //kendi icinde kullanilan degere bakar eger degisiyorsa calisir
+        output: function () { //aslinda data gibi davranir fakat method gibi calisir.
+            console.log("Computed Calisti...");
+            return this.counterC > 10 ? "10'dan büyüktür" : "10'dan kücüktür.";
+        }
     }
-})
+});

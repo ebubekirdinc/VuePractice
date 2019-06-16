@@ -8,9 +8,16 @@
 <div id="app">
     <br />
 
+    <b>Computed</b>
+    <button v-on:click="counterC++">Arttır</button>
+    <button v-on:click="counterC--">Azalt</button>
+    <button v-on:click="secondCounter++">2.Counter'ı Arttır</button> <span>2.Counter'a basilirsa computeda girmez cunku onunla alakali birsey yok computedta</span>
+    <p> Counter : {{ counterC }} | {{ secondCounter }}</p>
+    <p> {{ result() }} | {{ output }}</p>
 
+    <hr />
     <input type="text" v-model="twoWay">
-    <p> {{ twoWay }} </p>
+    <p> {{ twoWay }}  <span>two way data binding.</span></p>
     <h3> {{ twoWay }} </h3>
 
     <hr />
