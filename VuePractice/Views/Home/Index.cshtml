@@ -3,12 +3,44 @@
     span {
         color: green
     }
+
+    /*dinamik css icin*/
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    .yellow {
+        background-color: #fbbd08;
+    }
+
+    .blue {
+        background-color: blue
+    }
+
+    .green {
+        background-color: green
+    }
 </style>
 
 <div id="app">
     <br />
 
-    <b>Computed</b>
+    <hr />
+    <b>Dinamik CSS</b>
+    <div @@click="attachedClass = !attachedClass"
+         :class="divClass"
+         class="box"></div>
+    <div class="box" :class="{ yellow : attachedClass }"></div>
+    <div class="box" :class="[color, { yellow : attachedClass }]"></div>
+    <hr>
+    <input type="text" v-model="color">
+
+    <hr />
+    <b>Computed ve Watch</b>
     <button v-on:click="counterC++">Arttır</button>
     <button v-on:click="counterC--">Azalt</button>
     <button v-on:click="secondCounter++">2.Counter'ı Arttır</button> <span>2.Counter'a basilirsa computeda girmez cunku onunla alakali birsey yok computedta</span>

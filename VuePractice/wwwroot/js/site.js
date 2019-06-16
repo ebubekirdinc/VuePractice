@@ -6,6 +6,11 @@
 new Vue({
     el: '#app',
     data: {
+        //dinamik css icin
+        attachedClass: false,
+        color: "green",
+
+        //computed ve watch
         counterC: 0,
         secondCounter: 0,
 
@@ -43,6 +48,12 @@ new Vue({
         output: function () { //aslinda data gibi davranir fakat method gibi calisir.
             console.log("Computed Calisti...");
             return this.counterC > 10 ? "10'dan büyüktür" : "10'dan kücüktür.";
+        },
+        divClass: function () {
+            return {
+                yellow: this.attachedClass,
+                blue: !this.attachedClass
+            };
         }
     },
     watch: { //computed senkron watch asenkron calisir
