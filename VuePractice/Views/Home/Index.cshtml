@@ -30,17 +30,28 @@
     <br />
 
     <hr />
-    <b>Dinamik CSS</b>
+    <b>Dinamik CSS-Style ile</b><br />
+    <div id="app">
+        <div class="box" :style="{ backgroundColor : colorS}"></div>
+        <div class="box" :style="customStyle"></div>
+        <div class="box" :style="[ customStyle , { width: yukseklik + 'px' } ]"></div>		<hr>
+        <input type="text" v-model="colorS">
+        <input type="text" v-model="yukseklik">
+    </div>
+
+
+    <hr />
+    <b>Dinamik CSS-Class ile</b><br />
     <div @@click="attachedClass = !attachedClass"
          :class="divClass"
          class="box"></div>
-    <div class="box" :class="{ yellow : attachedClass }"></div>
-    <div class="box" :class="[color, { yellow : attachedClass }]"></div>
+    <div class="box" :class="{ yellow : attachedClass }"></div><span>attachedClass bool=>true ise soldaki class'i goster</span>
+    <div class="box" :class="[color, { yellow : attachedClass }]"></div><span>class'alari array seklinde vermek. color isimli degiskeni basar ve yellow;uda dogru ise</span>
     <hr>
     <input type="text" v-model="color">
 
     <hr />
-    <b>Computed ve Watch</b>
+    <b>Computed ve Watch</b><br />
     <button v-on:click="counterC++">Arttır</button>
     <button v-on:click="counterC--">Azalt</button>
     <button v-on:click="secondCounter++">2.Counter'ı Arttır</button> <span>2.Counter'a basilirsa computeda girmez cunku onunla alakali birsey yok computedta</span>

@@ -6,7 +6,12 @@
 new Vue({
     el: '#app',
     data: {
-        //dinamik css icin
+
+        //dinamik css icin -style ile
+        colorS: "green",
+        yukseklik: 100,
+
+        //dinamik css icin -class ile
         attachedClass: false,
         color: "green",
 
@@ -45,15 +50,22 @@ new Vue({
         }
     },
     computed: { //kendi icinde kullanilan degere bakar eger degisiyorsa calisir
-        output: function () { //aslinda data gibi davranir fakat method gibi calisir.
-            console.log("Computed Calisti...");
-            return this.counterC > 10 ? "10'dan büyüktür" : "10'dan kücüktür.";
+
+        customStyle: function () {
+            return {
+                backgroundColor: this.color,
+                height: this.yukseklik + "px"
+            };
         },
         divClass: function () {
             return {
                 yellow: this.attachedClass,
                 blue: !this.attachedClass
             };
+        },
+        output: function () { //aslinda data gibi davranir fakat method gibi calisir.
+            console.log("Computed Calisti...");
+            return this.counterC > 10 ? "10'dan büyüktür" : "10'dan kücüktür.";
         }
     },
     watch: { //computed senkron watch asenkron calisir
