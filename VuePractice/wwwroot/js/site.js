@@ -7,6 +7,11 @@ new Vue({
     el: '#app',
     data: {
 
+        //v-if
+        show: false,
+        sayi: 15,
+        showParagh: false,
+
         //dinamik css icin -style ile
         progressWidth: 10,
         colorS: "green",

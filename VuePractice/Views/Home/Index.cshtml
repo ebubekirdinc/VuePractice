@@ -36,6 +36,20 @@
     <br />
 
     <hr />
+    <b>v-if</b><br />
+    <p v-if="show">Beni Görebilirsin!</p>
+    <p v-if="!show">Beni görebilir misin acaba? :)</p>
+    <button @@click="show = !show">Göster/Gizle</button>
+    
+    <span>v-if ile v-show arasindaki fark=> if yok eder, show gizler</span>
+    <p v-if="sayi < 10">Sayı 10'dan küçüktür</p>
+    <p v-else-if="sayi > 10">Sayı 10'dan büyüktür</p>
+    <p v-else>Sayı 10'a eşittir</p>
+    <hr>
+    <button @@click="showParagh = !showParagh">Göster/Gizle</button>
+    <p v-show="showParagh">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, quos, voluptatem. Hic facilis, soluta mollitia repellendus maxime ab incidunt minus rerum, voluptate, inventore iure veritatis. Vel quae dolore, magni dignissimos.</p>
+
+    <hr />
     <b>Dinamik CSS-Style ile</b><br />
     <div>
         <button v-on:click="startProgress">Progress İşlemini Başlat!</button>
