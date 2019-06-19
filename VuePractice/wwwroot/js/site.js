@@ -7,6 +7,26 @@ new Vue({
     el: '#app',
     data: {
 
+        //v-for
+        products: ["Monitör", "Klavye", "Askı", "Masa"],
+        persons: [{
+            name: "Gökhan",
+            email: "gokhan@gkandemir.com"
+        },
+        {
+            name: "Felakettin",
+            email: "felo@gkandemir.com"
+        },
+        {
+            name: "Defne",
+            email: "defne@gkandemir.com"
+        },
+        {
+            name: "İflasettin",
+            email: "ifo@gkandemir.com"
+        }
+        ],
+
         //v-if
         show: false,
         sayi: 15,

@@ -36,11 +36,41 @@
     <br />
 
     <hr />
+    <b>v-for</b><br />
+    <ul>
+        <li v-for="(product, index) in products" :key="product"> {{ product }} - {{ index }}</li>
+    </ul>
+    @*key eklenmesi listedeki elemanlarin unique olarak tutulabilmesi icin*@
+    <button @@click="products.push('Hoperör')">Ekle</button>
+    <hr>
+    <ul>
+        <li v-for="personel in persons">
+            <ul>
+                <li v-for="(value, key, index) in personel"> <strong>{{ key }}</strong> : {{ value }} {{ index }}</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <div v-for="(product, index) in products">
+        <p> {{ product }} </p>
+        <p> {{ index }} </p>
+    </div>
+    <hr>
+    <span>template html elementi vue tarafindan render edilmez</span>
+    <template v-for="(product, index) in products">
+        <p> {{ product }} </p>
+        <p> {{ index }} </p>
+    </template>
+
+    <span v-for="i in 5"> {{ i }}</span>
+    <span>==>5 e kdr listele</span>
+
+    <hr />
     <b>v-if</b><br />
     <p v-if="show">Beni Görebilirsin!</p>
     <p v-if="!show">Beni görebilir misin acaba? :)</p>
     <button @@click="show = !show">Göster/Gizle</button>
-    
+
     <span>v-if ile v-show arasindaki fark=> if yok eder, show gizler</span>
     <p v-if="sayi < 10">Sayı 10'dan küçüktür</p>
     <p v-else-if="sayi > 10">Sayı 10'dan büyüktür</p>
