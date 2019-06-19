@@ -5,6 +5,12 @@
     }
 
     /*dinamik css icin*/
+    .progress {
+        background-color: blue;
+        width: 10px;
+        height: 20px;
+    }
+
     .box {
         width: 100px;
         height: 100px;
@@ -22,7 +28,7 @@
     }
 
     .green {
-        background-color: green
+        background-color: green /*backgroundColor asagida kullanimi CamelCase*/
     }
 </style>
 
@@ -31,13 +37,19 @@
 
     <hr />
     <b>Dinamik CSS-Style ile</b><br />
-    <div id="app">
-        <div class="box" :style="{ backgroundColor : colorS}"></div>
-        <div class="box" :style="customStyle"></div>
-        <div class="box" :style="[ customStyle , { width: yukseklik + 'px' } ]"></div>		<hr>
-        <input type="text" v-model="colorS">
-        <input type="text" v-model="yukseklik">
+    <div>
+        <button v-on:click="startProgress">Progress İşlemini Başlat!</button>
+        <br><br>
+        <div class="progress" :style="{width : progressWidth + 'px'}"></div>
     </div>
+    <div class="box" :style="{ backgroundColor : colorS}"></div>@*backgroundColor CamelCase*@
+    <div class="box" :style="customStyle"></div>
+    <div class="box" :style="[ customStyle , { width: yukseklik + 'px' } ]"></div>
+    <div class="box" :style="myStyle"></div>
+    <input type="text" v-model="colorS">
+    <input type="text" v-model="yukseklik">
+    <input type="text" v-model="myStyle.backgroundColor">
+
 
 
     <hr />

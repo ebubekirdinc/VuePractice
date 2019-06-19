@@ -8,8 +8,13 @@ new Vue({
     data: {
 
         //dinamik css icin -style ile
+        progressWidth: 10,
         colorS: "green",
         yukseklik: 100,
+        myStyle: {
+            width: "100px",
+            backgroundColor: "red"
+        },
 
         //dinamik css icin -class ile
         attachedClass: false,
@@ -28,6 +33,12 @@ new Vue({
         y: 0
     },
     methods: {
+        startProgress: function () {
+            var vm = this;
+            setInterval(function () {
+                vm.progressWidth += 10;
+            }, 1000);
+        },
         result: function () {
             console.log("Method Calisti...");
             return this.counterC > 10 ? "10'dan büyüktür" : "10'dan kücüktür.";
