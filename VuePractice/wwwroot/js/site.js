@@ -1,10 +1,23 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+//buradanda javascript kodu ile vue elemanlarina erisilebilir.
+var disaridanData = { //javascript objesi
+    title: 'app2 instance Title!'
+};
 
-// Write your JavaScript code.
+var vm2 = new Vue({
+    el: '#app2',
+    data: disaridanData
+}); 
 
-new Vue({
-    el: '#app',
+setTimeout(function () {
+    vm2.title = "Timer ile disaridan javascript kodu ile degistirildi.";
+}, 2000);
+
+console.log("Disaridan yazdirildi=>" + vm2.title);
+console.log("Disaridan $data ile yazdirildi=>" + vm2.$data.title); //vue data elemanlari
+
+var vm1 = new Vue({
+    el: '#app1',
     data: {
 
         //v-for
@@ -58,6 +71,9 @@ new Vue({
         y: 0
     },
     methods: {
+        app2TitleDegistir: function (e) {
+            vm2.title = "app1'den degisti";
+        },
         startProgress: function () {
             var vm = this;
             setInterval(function () {
