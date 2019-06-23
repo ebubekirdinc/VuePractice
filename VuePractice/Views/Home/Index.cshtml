@@ -33,9 +33,14 @@
 </style>
 
 <div id="app2">
+    <hr />
+    <b>Vue Instance</b><br />
     <br />
-    <h3 ref="heading">{{ title }}</h3>
-   
+    <h3>{{ title }}</h3>
+    <p ref="refDegistir">Ref ile degistir</p>
+    <p ref="refDegistirDisardan">...</p>
+    <button @@click="refDegistir">Refli elementi Degistir</button>
+
     <hr />
 </div>
 

@@ -6,15 +6,25 @@ var disaridanData = { //javascript objesi
 
 var vm2 = new Vue({
     el: '#app2',
-    data: disaridanData
-}); 
+    data: disaridanData,
+    methods: {
+        refDegistir: function () {
+            this.$refs.refDegistir.innerText = "ref ile degistirildi !!!";
+        }
+    }
+});
 
+/////////////////////////////////////////////////Vue Disi JavaScript Kodu///////////
 setTimeout(function () {
     vm2.title = "Timer ile disaridan javascript kodu ile degistirildi.";
 }, 2000);
 
 console.log("Disaridan yazdirildi=>" + vm2.title);
 console.log("Disaridan $data ile yazdirildi=>" + vm2.$data.title); //vue data elemanlari
+console.log(vm2); //neler var icine bak
+//refs ile disaridan degistirilebilir ama vue da ele alinmaz.
+vm2.$refs.refDegistirDisardan.innerText = "ref disardan degistirildi !!!";
+/////////////////////////////////////////////////Vue Disi JavaScript Kodu///////////
 
 var vm1 = new Vue({
     el: '#app1',
