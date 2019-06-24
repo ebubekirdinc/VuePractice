@@ -1,6 +1,24 @@
-﻿
+﻿//component diger kullanim
+var cmp = {
+    data: function() {
+        return {
+            status: "Pasif"
+        };
+    },
+    template: '<p> Sunucu Durumu : {{ status }} (<button @click="changeStatus">Değiştir</button>)</p>',
+    methods: {
+        changeStatus: function() {
+            this.status = "Aktif"
+        }
+    }
+};
+
+Vue.component('hello', {
+    template:"<h3>Hello from vue Compenent</h3>"
+    });
+
 //buradanda javascript kodu ile vue elemanlarina erisilebilir.
-var disaridanData = { //javascript objesi
+var disaridanData = { //javascript o bjesi
     title: 'app2 instance Title!'
 };
 
@@ -11,6 +29,9 @@ var vm2 = new Vue({
         refDegistir: function () {
             this.$refs.refDegistir.innerText = "ref ile degistirildi !!!";
         }
+    },
+    components: {
+        "my-comp": cmp
     }
 });
 
